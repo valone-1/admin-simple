@@ -1,5 +1,6 @@
 import Vue from 'vue'
 
+// t 浏览器样式初始化
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
@@ -24,9 +25,11 @@ import '@/permission' // permission control
  * please remove it before going online! ! !
  */
 import { mockXHR } from '../mock'
-if (process.env.NODE_ENV === 'production') {
-  mockXHR()
-}
+// t 解决初次登录405问题
+// if (process.env.NODE_ENV === 'production') {
+//   mockXHR()
+// }
+mockXHR()
 
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
